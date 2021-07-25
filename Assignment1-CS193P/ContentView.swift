@@ -13,6 +13,7 @@ struct ContentView: View {
     let flagsEmojis = ["🇦🇲","🇦🇼","🇧🇾","🇧🇬","🇬🇧","🇻🇪","🇩🇪","🇷🇺","🇸🇨","🇮🇱","🇨🇨","🇵🇪","🇰🇵"]
     let plantEmojis = ["🌷","🎋","🪴","🌵","🌲","🌳","☘️","🌾","🌹","🌺","🌻"]
     @State var emojis: [String] = []
+    @State var emojisCount: Int = 0
     var body: some View {
         VStack {
             Label{
@@ -23,9 +24,11 @@ struct ContentView: View {
            .font(.largeTitle)
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 70))]){
-                    ForEach(emojis, id: \.self) { emoji in
-                        CardView(content: emoji)
-                            .aspectRatio(2/3, contentMode: .fill)
+                    if emojisCount != 0 {
+                        ForEach(emojis[0...emojisCount], id: \.self) { emoji in
+                            CardView(content: emoji)
+                                .aspectRatio(2/3, contentMode: .fill)
+                        }
                     }
                 }
             }
@@ -43,6 +46,7 @@ struct ContentView: View {
     }
     var animalTheme : some View {
         Button{
+            emojisCount = Int.random(in: 4..<animalsEmojis.count)
             emojis = animalsEmojis.shuffled()
         } label: {
             VStack{
@@ -56,6 +60,7 @@ struct ContentView: View {
     }
     var plantTheme : some View {
         Button{
+            emojisCount = Int.random(in: 4..<plantEmojis.count)
             emojis = plantEmojis.shuffled()
         } label: {
             VStack{
@@ -68,6 +73,7 @@ struct ContentView: View {
     }
     var flagTheme : some View {
         Button{
+            emojisCount = Int.random(in: 4..<flagsEmojis.count)
             emojis = flagsEmojis.shuffled()
         } label: {
             VStack{
