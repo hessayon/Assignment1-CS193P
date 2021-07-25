@@ -11,5 +11,5 @@ There are two sides of each card. One side is filled, another one has a frame an
 You can flip the card by the tap gesture. 
 
 # ScreenShots
-<img src="https://user-images.githubusercontent.com/53599412/126898318-d6af5be1-6ec3-4ce2-8273-57e49e0bfddb.png" width="200" /img src="https://user-images.githubusercontent.com/53599412/126898320-0c369696-2cd7-467a-b6fa-9db1238ca13a.png" width="200" />
+<img src="https://user-images.githubusercontent.com/53599412/126898318-d6af5be1-6ec3-4ce2-8273-57e49e0bfddb.png" width="200" />,<img src="https://user-images.githubusercontent.com/53599412/126898320-0c369696-2cd7-467a-b6fa-9db1238ca13a.png" width="200" />
 
